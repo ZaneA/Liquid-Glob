@@ -3,7 +3,7 @@ class GlobBlock < Liquid::Block
   def initialize(tag_name, text, tokens)
     super
 
-    @files = Dir.glob(text.strip)
+    @files = Dir.glob(text.strip).sort
   end
 
   def render(context)
